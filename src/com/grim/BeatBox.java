@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class BeatBox {
     private JFrame theFrame;
+    private Form form;
     private ArrayList<JCheckBox> checkboxList;
     private Sequencer sequencer;
     private Sequence sequence;
@@ -21,10 +22,10 @@ public class BeatBox {
         theFrame = new JFrame("Super BeatBox");
         theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        form ff = new form(this);
-        JPanel background = ff.getForm();
+        form = new Form(this);
+        JPanel background = form.getForm();
         theFrame.getContentPane().add(background);
-        checkboxList = ff.getCheckBoxes();
+        checkboxList = form.getCheckBoxes();
 
         setUpMidi();
 
@@ -144,7 +145,10 @@ public class BeatBox {
         }
 
         sequencer.stop();
-        buildTrackAndStart();
+
+        if (form.isAutoStart()) {
+            buildTrackAndStart();
+        }
     }
 
     private void makeTracks(int[] list) {

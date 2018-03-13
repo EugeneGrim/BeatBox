@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class form {
+public class Form {
     private JPanel background;
     private JPanel nameBox;
     private JPanel buttonBox;
@@ -24,7 +24,7 @@ public class form {
 
     private ArrayList<JCheckBox> checkboxList = new ArrayList<>();
 
-    public form(BeatBox beatBox) {
+    Form(BeatBox beatBox) {
         this.beatBox = beatBox;
 
         GridLayout grid = new GridLayout(16, 16);
@@ -98,6 +98,10 @@ public class form {
                 beatBox.buildTrackAndStart();
             }
         }
+    }
+
+    public Boolean isAutoStart() {
+        return autoStart.isSelected();
     }
 
     public ArrayList<JCheckBox> getCheckBoxes() {
