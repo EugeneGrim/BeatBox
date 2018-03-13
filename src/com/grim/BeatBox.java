@@ -2,6 +2,7 @@ package com.grim;
 
 import javax.sound.midi.*;
 import javax.swing.*;
+import java.awt.*;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -30,6 +31,7 @@ public class BeatBox {
 
         theFrame.setBounds(50, 50, 300, 300);
         theFrame.pack();
+        theFrame.setMinimumSize(theFrame.getContentPane().getSize());
         theFrame.setVisible(true);
     }
 

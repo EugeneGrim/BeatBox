@@ -2,9 +2,10 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.grim.form">
   <grid id="27dc6" binding="background" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="1308" height="595"/>
+      <xy x="20" y="20" width="795" height="595"/>
     </constraints>
     <properties>
+      <minimumSize width="300" height="500"/>
       <name value=""/>
     </properties>
     <border type="none"/>
