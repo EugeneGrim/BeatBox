@@ -27,20 +27,7 @@ public class Form {
     Form(BeatBox beatBox) {
         this.beatBox = beatBox;
 
-        GridLayout grid = new GridLayout(16, 16);
-        grid.setVgap(1);
-        grid.setHgap(2);
-        mainPanel.setLayout(grid);
-
-        MyCheckboxClickedtListener cheboxClicked = new MyCheckboxClickedtListener();
-
-        for (int i = 0; i < 256; i++) {
-            JCheckBox c = new JCheckBox();
-            c.setSelected(false);
-            c.addActionListener(cheboxClicked);
-            checkboxList.add(c);
-            mainPanel.add(c);
-        }
+        setupCheckBoxes();
 
         start.addActionListener(new ActionListener() {
             @Override
@@ -90,6 +77,23 @@ public class Form {
                 beatBox.save();
             }
         });
+    }
+
+    private void setupCheckBoxes() {
+        GridLayout grid = new GridLayout(16, 16);
+        grid.setVgap(1);
+        grid.setHgap(2);
+        mainPanel.setLayout(grid);
+
+        MyCheckboxClickedtListener cheboxClicked = new MyCheckboxClickedtListener();
+
+        for (int i = 0; i < 256; i++) {
+            JCheckBox c = new JCheckBox();
+            c.setSelected(false);
+            c.addActionListener(cheboxClicked);
+            checkboxList.add(c);
+            mainPanel.add(c);
+        }
     }
 
     public class MyCheckboxClickedtListener implements ActionListener {
