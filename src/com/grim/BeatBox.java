@@ -28,72 +28,76 @@ public class BeatBox {
         theFrame = new JFrame("Super BeatBox");
         theFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        BorderLayout layout = new BorderLayout();
-        JPanel background = new JPanel(layout);
-        background.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+//        BorderLayout layout = new BorderLayout();
+//        JPanel background = new JPanel(layout);
+//        background.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+//
+//        checkboxList = new ArrayList<>();
+//        JPanel buttonBox = new JPanel();
+//        buttonBox.setLayout(new BoxLayout(buttonBox, BoxLayout.Y_AXIS));
+//
+//        JButton start = new JButton("Start");
+//        start.addActionListener(new MyStartListener());
+//        buttonBox.add(start);
+//
+//        autoStart = new JCheckBox("Auto start");
+//        autoStart.setSelected(true);
+//        buttonBox.add(autoStart);
+//
+//        JButton stop = new JButton("Stop");
+//        stop.addActionListener(new MyStopListener());
+//        buttonBox.add(stop);
+//
+//        JButton upTempo = new JButton("Tempo Up");
+//        upTempo.addActionListener(new MyUpTempoListener());
+//        buttonBox.add(upTempo);
+//
+//        JButton downTempo = new JButton("Tempo Down");
+//        downTempo.addActionListener(new MyDownTempoListener());
+//        buttonBox.add(downTempo);
+//
+//        JButton save = new JButton("Save...");
+//        save.addActionListener(new MySaveListener());
+//        buttonBox.add(save);
+//
+//        JButton open = new JButton("Open...");
+//        open.addActionListener(new MyOpenListener());
+//        buttonBox.add(open);
+//
+//        JButton clear = new JButton("Clear");
+//        clear.addActionListener(new MyClearListener());
+//        buttonBox.add(clear);
+//
+//        Box nameBox = new Box(BoxLayout.Y_AXIS);
+//        for (int i = 0; i < 16; i++) {
+//            nameBox.add(new Label(instrumentsName[i]));
+//        }
+//
+//        background.add(BorderLayout.EAST, buttonBox);
+//        background.add(BorderLayout.WEST, nameBox);
+//
+//        theFrame.getContentPane().add(background);
+//
+//        GridLayout grid = new GridLayout(16, 16);
+//        grid.setVgap(1);
+//        grid.setHgap(2);
+//        JPanel mainPanel = new JPanel(grid);
+//
+//        background.add(BorderLayout.CENTER, mainPanel);
+//
+//        MyCheckboxClickedtListener cheboxClicked = new MyCheckboxClickedtListener();
+//
+//        for (int i = 0; i < 256; i++) {
+//            JCheckBox c = new JCheckBox();
+//            c.setSelected(false);
+//            c.addActionListener(cheboxClicked);
+//            checkboxList.add(c);
+//            mainPanel.add(c);
+//        }
 
-        checkboxList = new ArrayList<>();
-        JPanel buttonBox = new JPanel();
-        buttonBox.setLayout(new BoxLayout(buttonBox, BoxLayout.Y_AXIS));
-
-        JButton start = new JButton("Start");
-        start.addActionListener(new MyStartListener());
-        buttonBox.add(start);
-
-        autoStart = new JCheckBox("Auto start");
-        autoStart.setSelected(true);
-        buttonBox.add(autoStart);
-
-        JButton stop = new JButton("Stop");
-        stop.addActionListener(new MyStopListener());
-        buttonBox.add(stop);
-
-        JButton upTempo = new JButton("Tempo Up");
-        upTempo.addActionListener(new MyUpTempoListener());
-        buttonBox.add(upTempo);
-
-        JButton downTempo = new JButton("Tempo Down");
-        downTempo.addActionListener(new MyDownTempoListener());
-        buttonBox.add(downTempo);
-
-        JButton save = new JButton("Save...");
-        save.addActionListener(new MySaveListener());
-        buttonBox.add(save);
-
-        JButton open = new JButton("Open...");
-        open.addActionListener(new MyOpenListener());
-        buttonBox.add(open);
-
-        JButton clear = new JButton("Clear");
-        clear.addActionListener(new MyClearListener());
-        buttonBox.add(clear);
-
-        Box nameBox = new Box(BoxLayout.Y_AXIS);
-        for (int i = 0; i < 16; i++) {
-            nameBox.add(new Label(instrumentsName[i]));
-        }
-
-        background.add(BorderLayout.EAST, buttonBox);
-        background.add(BorderLayout.WEST, nameBox);
-
+        form ff = new form(this);
+        JPanel background = ff.getForm();
         theFrame.getContentPane().add(background);
-
-        GridLayout grid = new GridLayout(16, 16);
-        grid.setVgap(1);
-        grid.setHgap(2);
-        JPanel mainPanel = new JPanel(grid);
-
-        background.add(BorderLayout.CENTER, mainPanel);
-
-        MyCheckboxClickedtListener cheboxClicked = new MyCheckboxClickedtListener();
-
-        for (int i = 0; i < 256; i++) {
-            JCheckBox c = new JCheckBox();
-            c.setSelected(false);
-            c.addActionListener(cheboxClicked);
-            checkboxList.add(c);
-            mainPanel.add(c);
-        }
 
         setUpMidi();
 
