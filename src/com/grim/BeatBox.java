@@ -83,7 +83,7 @@ public class BeatBox {
         sequencer.stop();
     }
 
-    void clear () {
+    void clear() {
        sequencer.stop();
        for (int i = 0; i < 256; i++) {
            checkboxList.get(i).setSelected(false);

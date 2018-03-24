@@ -24,8 +24,8 @@ public class Form {
 
     private ArrayList<JCheckBox> checkboxList = new ArrayList<>();
 
-    Form(BeatBox beatBox) {
-        this.beatBox = beatBox;
+    Form(BeatBox bb) {
+        this.beatBox = bb;
 
         setupCheckBoxes();
 
