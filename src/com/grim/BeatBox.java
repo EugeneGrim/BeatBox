@@ -47,7 +47,7 @@ public class BeatBox {
         }
     }
 
-    void buildTrackAndStart() {
+    public void buildTrackAndStart() {
         int[] trackList;
         sequence.deleteTrack(track);
         track = sequence.createTrack();
@@ -79,11 +79,11 @@ public class BeatBox {
         }
     }
 
-    void stopSequencer() {
+    public void stopSequencer() {
         sequencer.stop();
     }
 
-    void clear() {
+    public void clear() {
        sequencer.stop();
        for (int i = 0; i < 256; i++) {
            checkboxList.get(i).setSelected(false);
@@ -92,17 +92,17 @@ public class BeatBox {
        track = sequence.createTrack();
     }
 
-    void upTempo() {
+    public void upTempo() {
         float tempoFactor = sequencer.getTempoFactor();
         sequencer.setTempoFactor( (float) (tempoFactor * 1.03) );
     }
 
-    void downTempo() {
+    public void downTempo() {
         float tempoFactor = sequencer.getTempoFactor();
         sequencer.setTempoFactor( (float) (tempoFactor * 0.97) );
     }
 
-    void save() {
+    public void save() {
         boolean[] checkboxState = new boolean[256];
         for (int i = 0; i < 256; i++) {
             JCheckBox check = checkboxList.get(i);
@@ -122,7 +122,7 @@ public class BeatBox {
         }
     }
 
-    void open() {
+    public void open() {
         boolean[] checkboxState = new boolean[256];
         JFileChooser fileOpen = new JFileChooser();
         fileOpen.showSaveDialog(theFrame);
