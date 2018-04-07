@@ -56,7 +56,7 @@ public class BeatBox {
             trackList = new int[16];
             int key = instruments[i];
             for (int j = 0; j < 16; j++) {
-                JCheckBox jc = checkboxList.get(j + (16*i));
+                JCheckBox jc = checkboxList.get(j + (16 * i));
                 if (jc.isSelected()) {
                     trackList[j] = key;
                 } else {
@@ -84,22 +84,22 @@ public class BeatBox {
     }
 
     public void clear() {
-       sequencer.stop();
-       for (int i = 0; i < 256; i++) {
-           checkboxList.get(i).setSelected(false);
-       }
-       sequence.deleteTrack(track);
-       track = sequence.createTrack();
+        sequencer.stop();
+        for (int i = 0; i < 256; i++) {
+            checkboxList.get(i).setSelected(false);
+        }
+        sequence.deleteTrack(track);
+        track = sequence.createTrack();
     }
 
     public void upTempo() {
         float tempoFactor = sequencer.getTempoFactor();
-        sequencer.setTempoFactor( (float) (tempoFactor * 1.03) );
+        sequencer.setTempoFactor((float) (tempoFactor * 1.03));
     }
 
     public void downTempo() {
         float tempoFactor = sequencer.getTempoFactor();
-        sequencer.setTempoFactor( (float) (tempoFactor * 0.97) );
+        sequencer.setTempoFactor((float) (tempoFactor * 0.97));
     }
 
     public void save() {
@@ -156,7 +156,7 @@ public class BeatBox {
             int key = list[i];
             if (key != 0) {
                 track.add(makeEvent(144, 9, key, 100, i));
-                track.add(makeEvent(128, 9, key, 100, i+1));
+                track.add(makeEvent(128, 9, key, 100, i + 1));
             }
         }
     }
